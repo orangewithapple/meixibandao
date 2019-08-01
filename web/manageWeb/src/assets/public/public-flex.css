@@ -1,0 +1,87 @@
+
+/***水平均匀对齐***/
+.row-flex-level{
+    display: -webkit-flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/***两端顶格对齐***/
+.row-flex-between{
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/***底端水平均匀对齐***/
+.row-flex-end{
+    display: -webkit-flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+/***子元素居中***/
+.row-flex-center{
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+/***左侧居中对齐***/
+.row-flex-start{
+    display: -webkit-flex;
+    justify-content: start;
+    align-items: center;
+}
+/***左上居中对齐***/
+.row-flex-leftstart{
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+/***右上居中对齐***/
+.row-flex-rightstart{
+    display: -webkit-flex;
+    justify-content: end;
+    align-items: end;
+}
+/***右侧居中对齐***/
+.row-flex-end{
+    display: -webkit-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+/***右侧逆序***/
+.rowReverse-flex-right{
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+/***左侧逆序***/
+.rowReverse-flex-end{
+    display: -webkit-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+}
+/*垂直居中*/
+.column-flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*垂直左侧居中*/
+.column-flex-start{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+/*九宫格布局*/
+.jiu-flex{
+    width:80%;
+   justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+
