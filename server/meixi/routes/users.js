@@ -3,7 +3,6 @@ var router = express.Router();
 let Notice = require("../models/user");
 var jwt = require("jsonwebtoken");
 require("../public/javascripts/connectDB");
-require("../api/user")
 /* GET users listing. */
 router.post('/', function(req, res, next) {
   let userName = req.body.username;

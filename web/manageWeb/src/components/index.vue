@@ -5,49 +5,48 @@
                 <van-image round width="2rem" height="2rem" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
                 <span>admin</span>
             </div>
-            <van-sidebar v-model="activeKey">
-                <van-sidebar-item title="标签名称" />
-                <van-sidebar-item title="标签名称" />
-                <van-sidebar-item title="标签名称" />
+            <van-sidebar v-model="activeKey" @change="change">
+                <van-sidebar-item title="业主信息" />
+                <van-sidebar-item title="会员权益" />
+                <!-- <van-sidebar-item title="标签名称" /> -->
             </van-sidebar>
         </div>
-        <div class="indexTable">
-            <van-row class="title">
-                <van-col span="8">业主</van-col>
-                <van-col span="8">房号</van-col>
-                <van-col span="8">操作</van-col>
-            </van-row>
-            <van-row class="content" v-for="item in ownerList" :key="item._id">
-                <van-col span="8">{{item.name.join(",")}}</van-col>
-                <van-col span="8">{{item.room.join(",")}}</van-col>
-                <van-col span="8">
-                    <button>编辑</button>
-                </van-col>
-            </van-row>
-        </div>
-    </div>
+        <keep-alive>
+            <owner :is="whichShow"></owner>   <!--     业主信息组件     -->
+
+            <vip :is="whichShow"></vip>      <!--     会员权益组件     -->
+       </keep-alive>
+    </div>  
 </template>
 <script>
 import config from '../assets/public/config.js'
+import owner from './ownerInfo'
+import vip from './vipDetail'
 export default {
     created(){
-        this.phoneHeight = window.screen.height + 'px';
-         this.$http.post(config.langcang_config.url+config.langcang_config.api.numPage).then(
-            res=>{
-                if(res.data.success == true)
-                {
-                    let data = res.data.data;
-                    this.ownerList = data;
-                }
-            }
-          )
+        let that = this;
+        this.phoneHeight = window.screen.height + 'px';       
     },
      data() {
     return {
       activeKey: 0,
       phoneHeight:"",
-      ownerList:""
+      whichShow:"owner"
     };
+  },
+    components:{
+        owner,
+        vip
+    },
+  methods:{
+    change(index){
+        if(index==0){
+            this.whichShow = owner;
+        }
+        if(index==1){
+            this.whichShow = vip;
+        }
+    }
   }
 }
 </script>

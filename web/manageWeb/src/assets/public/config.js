@@ -14,7 +14,8 @@ export default{
              * 首页专区
              * **/
             users:"users",//登录
-            numPage:"numPage"
+            numPage:"numPage",//业主信息分页
+            vipDetail:"vipDetail"//会员权益
         }
     },
     //  axios.create({

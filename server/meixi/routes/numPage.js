@@ -34,7 +34,7 @@ router.post('/', function(req, res, next) {
                             name:name,
                             room:room
                         });
-                        numpage.save(function(err,doc){
+                        numpage.save(function(err,doc){ 
                             res.json({
                                 success:true,
                                 message:"添加成功",

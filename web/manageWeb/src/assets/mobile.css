@@ -39,6 +39,8 @@ html{
 .nav{
     background-color: #f8f8f8;
     width: 85px;
+    border-right: 1px solid #f8f8f8;
+    box-shadow: 0rem 0rem 1rem 0.1rem;
 }
 .nav span{
     font-size: .8rem;
@@ -47,14 +49,12 @@ html{
 .userImg{
     padding: 1rem;
 }
-button, input, textarea {
-    font: menu !important;
-}
 .tableBox{
     align-items: flex-start !important;
 }
 .indexTable{
-    width: 90%;
+    width: 14rem;
+    margin-left: 1rem;
     font-size: .7rem;
     background-color: #f8f8f8;
 }
@@ -77,10 +77,80 @@ button, input, textarea {
     line-height: 1.5rem;
 }
 .content button{
-    font-size: .8rem;
+    font-size: .5rem !important;
     background-color: black;
     color: #ffffff;
     border: 0;
     width: 3rem;
     height: 1rem;
+    line-height: 1rem;
+}
+.van-pagination__item--active{
+    background-color:#000000 !important;
+}
+button, input, textarea{
+    font: menu !important;
+}
+.add button{
+    width: 5rem;
+    height: 2rem;
+    background-color: #000000;
+    color: #ffffff;
+    border:0;
+}
+.add{
+    width: 100%;
+    text-align: center;
+    height: 5rem;
+    line-height: 5rem;
+}
+.van-popup--center{
+    width: 13rem;
+    height: 10rem;
+}
+.dailog span{
+    font-size: .7rem;
+}
+.dailog button{
+    width: 3rem;
+    height: 1.5rem;
+    background-color: #000000;
+    color: #ffffff;
+    border:0;
+}
+.dailog div{
+    height: 4rem;
+    line-height: 2rem;
+}
+.saveCancel .save{
+    margin-right: 1rem;
+}
+.saveCancel button{
+    font-size: .6rem !important;
+}
+.dailog h1{
+    font-size: 1rem;
+}
+.Ip,.dailog input{
+    width: 8rem ;
+    height: 1rem ;
+    margin-left: .5rem;
+}
+.vipDetail{
+    width: 100%;
+}
+.vipDetail span{
+    font-size: .7rem;
+    font-weight: bold;
+    width: 5rem;
+}
+.vipDetail button{
+    font-size: .5rem;
+    background-color: black;
+    color: #ffffff;
+    border: 0;
+    width: 3rem;
+    height: 1rem;
+    line-height: 1rem;
+    margin-top: 2rem;
 }

@@ -3,13 +3,13 @@
     <div>
         <div class="loginBox column-flex-center">
           <h1>后台管理系统</h1>
-          <div>
+          <div class="row-flex-start">
             <span>账号</span>
-            <input type="text" v-model="username">
+            <input class="Ip" type="text" v-model="username">
           </div>
-          <div>
+          <div class="row-flex-start">
             <span>密码</span>
-            <input type="password" v-model="password">
+            <input class="Ip" type="password" v-model="password">
           </div>           
           <button @click="signIn">登录</button>
         </div>
@@ -35,7 +35,9 @@ export default {
             res=>{
               this.$toast(res.data.message);
               if(res.data.success==true){
-                this.$router.replace("Index");
+                let token = JSON.stringify(res.data.token)
+                localStorage.setItem("userInfo",res.data.token);
+                this.$router.replace('Index');
                 }
             }
           )
