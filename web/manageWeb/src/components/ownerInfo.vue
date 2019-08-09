@@ -36,7 +36,7 @@
          -->
         <div>
             <van-popup v-model="show" class="dailog column-flex-center">
-                <h1>修改</h1>                    
+                <h1>{{whichFn}}</h1>                    
                 <div class="row-flex-start">
                     <span>业主:</span>
                     <input type="text"  v-model="editname">
@@ -67,7 +67,8 @@ export default {
       show: false,//弹出框是否弹出,false关闭
       editname:"",//修改业主姓名
       editroom:"",//修改房号
-      id:""//数据_id
+      id:"",//数据_id,
+      whichFn:""
     };
   },
   methods:{
@@ -104,12 +105,14 @@ export default {
         this.editroom = data.room.join(',');
         this.id = data._id;
         this.show = true;
+        this.whichFn = "修改"
       },
       add(){
         this.editname = "";
         this.editroom = "";
         this.show = true;
-        this.id = "add"
+        this.id = "add";
+        this.whichFn = "添加";
       },
       // 弹出框取消
       cancel(){

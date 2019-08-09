@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
     if(docs!=""){
       let secretOrPrivateKey="meixibandao"
       let token= jwt.sign({password:passWord},secretOrPrivateKey,{
-        expiresIn: 60*60*1
+        expiresIn: 60*60*24
       })
       res.json({
         success: true,

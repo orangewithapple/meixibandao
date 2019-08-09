@@ -5,11 +5,11 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import { Field,Sidebar,SidebarItem,Image,Toast,List,Row, Col,Pagination,Popup } from 'vant';
+import { Field,Sidebar,SidebarItem,Image,Toast,List,Row, Col,Pagination,Popup,Uploader } from 'vant';
 import './assets/mobile.css'
 import 'vant/lib/index.css';
 import "./assets/public/public-flex.css"
-Vue.use(Field).use(Sidebar).use(SidebarItem).use(Image).use(Toast).use(List).use(Row).use(Col).use(Pagination).use(Popup);
+Vue.use(Field).use(Sidebar).use(SidebarItem).use(Image).use(Toast).use(List).use(Row).use(Col).use(Pagination).use(Popup).use(Uploader);
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 /* eslint-disable no-new */

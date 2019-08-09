@@ -41,6 +41,7 @@ html{
     width: 85px;
     border-right: 1px solid #f8f8f8;
     box-shadow: 0rem 0rem 1rem 0.1rem;
+    margin-right: 1rem;
 }
 .nav span{
     font-size: .8rem;
@@ -54,7 +55,6 @@ html{
 }
 .indexTable{
     width: 14rem;
-    margin-left: 1rem;
     font-size: .7rem;
     background-color: #f8f8f8;
 }
@@ -145,12 +145,13 @@ button, input, textarea{
     width: 5rem;
 }
 .vipDetail button{
-    font-size: .5rem;
-    background-color: black;
-    color: #ffffff;
+    width: 5rem;
+    height: 2rem;
+    background-color: #000;
+    color: #fff;
     border: 0;
-    width: 3rem;
-    height: 1rem;
-    line-height: 1rem;
     margin-top: 2rem;
+}
+.van-uploader__preview-image{
+    width: 10rem !important;
 }
