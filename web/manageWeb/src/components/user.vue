@@ -35,7 +35,7 @@ export default {
             res=>{
               this.$toast(res.data.message);
               if(res.data.success==true){
-                let token = JSON.stringify(res.data.token)
+                let token = JSON.stringify(res.data.token);
                 localStorage.setItem("userInfo",res.data.token);
                 this.$router.replace('Index');
                 }

@@ -29,10 +29,13 @@ router.post('/', function(req, res, next) {
                 if(id){
                     if(id=="add"){
                 Notice.find({},function(err,docs){
+                    let date = new Date();
+                    let time = date.getTime(date)
                     if(docs){
                         let numpage = new Notice({
                             name:name,
-                            room:room
+                            room:room,
+                            id:time
                         });
                         numpage.save(function(err,doc){ 
                             res.json({

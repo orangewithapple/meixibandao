@@ -155,3 +155,48 @@ button, input, textarea{
 .van-uploader__preview-image{
     width: 10rem !important;
 }
+.van-col{
+    overflow: auto;
+}
+
+   /* 合作商家组件 */
+   #hexagon {
+    width: 100px;
+    height: 55px;
+    background: red;
+    position: relative;
+  }
+  #hexagon:before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid red;
+  }
+  #hexagon:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid red;
+  }
+  .center{
+    position: absolute !important;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    
+  }
+  .animartion{
+    position: relative;
+  }

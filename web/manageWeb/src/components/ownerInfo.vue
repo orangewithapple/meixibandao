@@ -100,7 +100,7 @@ export default {
           )
       },
       //修改按钮
-      showPopup(data){
+      showPopup(data,index){
         this.editname = data.name.join(',');
         this.editroom = data.room.join(',');
         this.id = data._id;

@@ -8,13 +8,15 @@
             <van-sidebar v-model="activeKey" @change="change">
                 <van-sidebar-item title="业主信息" />
                 <van-sidebar-item title="会员权益" />
-                <!-- <van-sidebar-item title="标签名称" /> -->
+                <van-sidebar-item title="合作商家" />
             </van-sidebar>
         </div>
         <keep-alive>
             <owner :is="whichShow"></owner>   <!--     业主信息组件     -->
 
             <vip :is="whichShow"></vip>      <!--     会员权益组件     -->
+
+            <Business :is="whichShow"></Business>  <!--     合作商家组件     -->
        </keep-alive>
     </div>  
 </template>
@@ -22,6 +24,7 @@
 import config from '../assets/public/config.js'
 import owner from './ownerInfo'
 import vip from './vipDetail'
+import Business from './business'
 export default {
     created(){
         let that = this;
@@ -31,12 +34,13 @@ export default {
     return {
       activeKey: 0,
       phoneHeight:"",
-      whichShow:"owner"
+      whichShow:"Business"
     };
   },
     components:{
         owner,
-        vip
+        vip,
+        Business
     },
   methods:{
     change(index){
@@ -45,6 +49,9 @@ export default {
         }
         if(index==1){
             this.whichShow = vip;
+        }
+        if(index==2){
+            this.whichShow = Business;
         }
     }
   }
