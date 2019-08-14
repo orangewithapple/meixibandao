@@ -52,6 +52,7 @@ html{
 }
 .tableBox{
     align-items: flex-start !important;
+    background-color:#f8f8f8;
 }
 .indexTable{
     width: 14rem;
@@ -144,7 +145,7 @@ button, input, textarea{
     font-weight: bold;
     width: 5rem;
 }
-.vipDetail button{
+.vipDetail button,.business button{
     width: 5rem;
     height: 2rem;
     background-color: #000;
@@ -152,7 +153,7 @@ button, input, textarea{
     border: 0;
     margin-top: 2rem;
 }
-.van-uploader__preview-image{
+.vipDetail .van-uploader__preview-image,.businessHead .van-uploader__preview-image{
     width: 10rem !important;
 }
 .van-col{
@@ -160,43 +161,27 @@ button, input, textarea{
 }
 
    /* 合作商家组件 */
-   #hexagon {
-    width: 100px;
-    height: 55px;
-    background: red;
-    position: relative;
-  }
-  #hexagon:before {
-    content: "";
-    position: absolute;
-    top: -25px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 25px solid red;
-  }
-  #hexagon:after {
-    content: "";
-    position: absolute;
-    bottom: -25px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 25px solid red;
-  }
-  .center{
-    position: absolute !important;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    
-  }
-  .animartion{
-    position: relative;
-  }
+  
+.business h1{
+    font-size: .7rem;
+    width: 5rem;
+}
+.businessLogoList{
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-top: 1rem;
+}
+.businessLogo span,.businessHead span{
+    font-size: .7rem;
+    font-weight: bold;
+}
+.business{
+    overflow-y: scroll;
+    height: 100%;
+}
+.business button{
+    margin-top: 0
+}
+.businessLogoList .van-image{
+    margin-right: .5rem;
+}

@@ -5,6 +5,15 @@ let fs = require('fs');
 require("../public/javascripts/connectDB");
 /* GET home page. */
 router.post('/', function(req, res, next) {
+    // let token = req.body.token;
+    // console.log(token)
+    // if(token==""||token==undefined){
+    //     res.json({
+    //         success:false,
+    //         message:"请先登录",
+    //     })
+    //     return;
+    // }
     if(req.body.vipId){
         let id = req.body.vipId;
         let data = req.body.List

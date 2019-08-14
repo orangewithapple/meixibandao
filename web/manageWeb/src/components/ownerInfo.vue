@@ -79,10 +79,8 @@ export default {
       },
       //业主数据
       ownerData(){
-            let getInfo =localStorage.getItem("userInfo");
             this.$http.post(config.langcang_config.url+config.langcang_config.api.numPage,{
                 page:this.currentPage,
-                token:getInfo
             }).then(
             res=>{
                 this.total = Number(res.data.total);
@@ -90,11 +88,6 @@ export default {
                 {
                     let data = res.data.data;
                     this.ownerList = data;
-                }
-                else
-                {
-                    this.$toast(res.data.message)
-                    this.$router.replace('/');
                 }
             }
           )

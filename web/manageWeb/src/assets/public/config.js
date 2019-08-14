@@ -1,4 +1,7 @@
-import axios from 'axios'
+import axios from 'axios';
+import Toast from 'vant/lib/toast';
+import router from '../../router';
+import 'vant/lib/toast/style';
 export default{
     langcang_config:{
         /**
@@ -15,60 +18,36 @@ export default{
              * **/
             users:"users",//登录
             numPage:"numPage",//业主信息分页
-            vipDetail:"vipDetail"//会员权益
+            vipDetail:"vipDetail",//会员权益
+            business:"business"//合作商家
         }
     },
-    //  axios.create({
-    //     baseURL:'http://easy-mock.com/mock/596077559adc231f357bcdfb/axios/',
-    //     timeout: 1000,
-    //     responseType:'json',
-    //     headers:{
-    //       'custome-header': 'miaov',
-    //       'content-type':'application/x-www-form-urlencoded'   //转换为key=value的格式必须增加content-type
-    //     },
-    //     transformRequest:[function(data){
-    //         console.log(data)
-    //       data.age = 30;  //发送之前增加的属性
-    //       return queryString.stringify(data);    //利用对应方法转换格式
-    //     }]
-    //   })
 }
-//    axios.interceptors.request.use(config => {
-//   let getInfo =JSON.parse(localStorage.getItem("userInfo"));
-//   let token = getInfo.Token;
-//   if(token)
-//   {
-//       console.log(1)
-//       config.headers.Authorization = token;
-//   }
-//   return config
-// }, error => {
-//   // 请求错误处理
-//   return Promise.reject(error)
-// })
-// // http response 服务器响应拦截器，这里拦截401错误，并重新跳入登页重新获取token
-// axios.interceptors.response.use(
-//   response => {
-//       return response;
-//   },
-//   error => {
-//       if (error.response) {
-//          console.log(2)
-//       }
-//       return Promise.reject(error.response.data) 
-//   });
-
-// var HTTP = axios.create({
-//     baseURL:'/api/',
-//     timeout: 1000,
-//     responseType:'json',
-//     headers:{
-//       'custome-header': 'miaov',
-//       'content-type':'application/x-www-form-urlencoded'   //转换为key=value的格式必须增加content-type
-//     },
-//     transformRequest:[function(data){
-//         console.log(data)
-//       data.age = 30;  //发送之前增加的属性
-//       return queryString.stringify(data);    //利用对应方法转换格式
-//     }]
-//   })
+/***
+ * 
+ *请求拦截，请求后台前设置token到请求头
+ * 
+ */
+   axios.interceptors.request.use(config => {
+  let token = localStorage.getItem("userInfo");
+  if(token)
+  {
+    config.headers['token'] = token
+  }
+  return config
+}, error => {
+  // 请求错误处理
+  return Promise.reject(error)
+})
+// 添加响应拦截器
+axios.interceptors.response.use(function (response) {
+    // 对响应数据做点什么
+    return response;
+  }, function (error) {
+    // {对响应错误做点什么
+    if(error.response.status == 401){
+        Toast("请重新登录")
+        router.replace('/');
+    }
+    return Promise.reject(error);
+  });
