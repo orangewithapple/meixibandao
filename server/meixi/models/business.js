@@ -5,7 +5,7 @@ let business = new Schema({
     businessHead:[{url:String}],
     discount:String,
     explain:String,
-    detial:Array,
+    detial:String,
 },
 {
     collection:'business',

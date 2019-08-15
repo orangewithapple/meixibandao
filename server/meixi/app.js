@@ -23,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/public",express.static('public'));
+app.use('/users', usersRouter);
 // app.use(express.static(path.join(__dirname, 'public/images')));
 app.use('*',function(req, res, next) {
   //路由拦截：是否存在token，存在放行，否则拦截
@@ -47,7 +48,6 @@ app.use('*',function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/numPage', numPage);
 app.use('/vipDetail', vipDetail);
-app.use('/users', usersRouter);
 app.use('/business', Business);
 // catch 404 and forward to error handler
 // error handler

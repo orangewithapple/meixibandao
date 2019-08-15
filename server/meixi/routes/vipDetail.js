@@ -75,7 +75,6 @@ router.post('/', function(req, res, next) {
         Notice.find({},function(err,docs){
             res.json({
                 success:true,
-                message:"什么都没有",
                 data:docs
             })
         })

@@ -1,11 +1,117 @@
 var express = require('express');
 var router = express.Router();
+let fs = require('fs');
+var businessLogo =null;
+var businessHead = null;
 require("../public/javascripts/connectDB");
 let Notice = require("../models/business");
 /* GET home page. */
 router.post('/', function(req, res, next) {
+    let _id = req.body.id;
+    let editId = req.body.editId;
+    let time = new Date();
+    let name = time.getTime(time);
+    //根据ID查找商户
+    if(_id){
+        Notice.find({_id:_id},function(err,docs){
+            res.json({
+                success:true,
+                data:docs
+            })
+        })
+    }
+    //修改
+    else if(editId){
+        let dataList = req.body.List;
+        Notice.updateOne({_id:editId},dataList,function(err,docs){
+            if(err){
+                res.send(err)
+            }
+            else{
+                res.json({
+                    success:false,
+                    message:"修改成功"
+                })
+            }
+        })
+    }
+    //换图片
+    else if(req.body.imgId||req.body.LogoId||req.body.HEADId){
+        let id = req.body.imgId
+        let logoId = req.body.LogoId;
+        let headId = req.body.HEADId;
+        var imgData = req.body.file;
+        // let fileType = imgData.slice(11,15)
+        var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
+        if (typeof Buffer.from === "function") {
+            // Node 5.10+
+          var  buf = Buffer.from(base64Data, 'base64'); 
+        } else {
+            // older Node versions
+        var buf = new Buffer(base64Data, 'base64'); 
+        }
+        fs.writeFile("../meixi/public/images/"+name+".jpg", buf, function(err) {
+                if(!id){
+                    if(logoId){
+                        businessLogo='api/public/images/'+name+".jpg";
+                    }
+                    if(headId){
+                        businessHead='api/public/images/'+name+".jpg";
+                       
+                    }
+                    return;
+                }
+                if(logoId){
+                    Notice.updateOne({_id:id}, {businessUrl:[{url:'api/public/images/'+name+".jpg"}]},function(err,doc) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            res.json({
+                            success:true,
+                            message:"上传成功",
+                            })
+                        }
+                        });
+                }
+                if(headId){
+                    Notice.updateOne({_id:id}, {businessHead:[{url:'api/public/images/'+name+".jpg"}]},function(err,doc) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            res.json({
+                            success:true,
+                            message:"上传成功",
+                            })
+                        }
+                        });
+                }
+        });
+    }
+    //添加
+    else if(req.body.addBusiness){
+    let discount = req.body.discount;
+    let explain = req.body.explain;
+    let detial = req.body.detial;
+    console.log(businessLogo)
+     let arr = new Notice({
+            businessUrl:[{url:businessLogo}],
+            businessHead:[{url:businessHead}],
+            discount:discount,
+            explain:explain,
+            detial:detial
+        })
+        arr.save(function(err,doc){
+            res.json({
+                success:true,
+                message:"添加成功",
+                })
+        })
+    
+    }
+    //初始化
+    else{
         Notice.find({},'businessUrl',function(err,doc){
-            Notice.find({_id:"5d5404a63ec6a823d4769c88"},function(err,docs){
+            Notice.find({_id:"5d54c3d09bd6e30860acbcae"},function(err,docs){
                 res.json({
                     success:true,
                     LogoList:doc,
@@ -13,24 +119,10 @@ router.post('/', function(req, res, next) {
                 })
             })    
         })
+    }
     // for(var i =0;i<3;i++){
 
-    //     let arr = new Notice({
-    //         businessUrl:[{"url":"api/public/images/cat.jpg"}],
-    //         businessHead:[{"url":"api/public/images/cat.jpg"}],
-    //         discount:"持卡者可在酒店餐饮消费场所可享受食品8.5折优惠（桃花源中餐厅）",
-    //         explain:"桃花源中餐厅位于梅溪湖金茂豪华精选酒店二楼，提倡以新鲜食材和佐料为菜品核心的田园至餐桌理念，聚焦菜式创新和本地风味，以地道湘菜和精选粤菜飨宴四方来宾",
-    //         detial:[
-    //             "1.对于餐饮特别的促销活动（如圣诞大餐、年夜饭、情人节、六一儿童节、中秋节、元旦、全日餐厅各种美食节等），食品销售将按就酒店相关价格执行。",
-    //             "2.以上优惠不能与其他优惠条件同时使用。",
-    //             "3.餐厅海鲜、燕翅鲍、酒水、烟草及特价菜品不享受折扣。"
-    //         ]
-    //     })
-    //     arr.save(function(err,doc){
-    //         res.send(200)
-    //     })
-    
-    // }
+   
 });
 
 module.exports = router;

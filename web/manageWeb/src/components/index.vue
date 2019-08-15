@@ -34,7 +34,7 @@ export default {
     return {
       activeKey: 0,
       phoneHeight:"",
-      whichShow:"Business"
+      whichShow:"owner"
     };
   },
     components:{

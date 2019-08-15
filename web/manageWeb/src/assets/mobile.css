@@ -185,3 +185,6 @@ button, input, textarea{
 .businessLogoList .van-image{
     margin-right: .5rem;
 }
+.business .van-cell{
+    border-bottom: 1px solid;
+}
