@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var numPage = require('./routes/numPage');
 var vipDetail = require('./routes/vipDetail');
 var Business = require('./routes/business');
+var owenrUser = require('./routes/owenrUser');
 var jwt = require("jsonwebtoken");
 var app = express();
 app.use(bodyParser.json({limit:'5mb'}));
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/public",express.static('public'));
 app.use('/users', usersRouter);
+app.use('/owenrUser', owenrUser);
 // app.use(express.static(path.join(__dirname, 'public/images')));
 app.use('*',function(req, res, next) {
   //路由拦截：是否存在token，存在放行，否则拦截
