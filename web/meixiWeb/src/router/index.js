@@ -1,15 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-
+import User from '@/components/user'
+import Index from '@/components/index'
+import BusinessDetail from '@/components/businessDetail'
+import Business from '@/components/Business'
 Vue.use(Router)
 
 export default new Router({
+  base:"/meixiweb/",
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'User',
+      component: User
+    },
+    {
+      path: '/Index',
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/Business',
+      name: 'Business',
+      component: Business,
+      children:[
+        {
+          path: 'BusinessDetail',
+          component: BusinessDetail
+        }
+      ]
     }
   ]
 })

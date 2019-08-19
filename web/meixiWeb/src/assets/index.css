@@ -1,0 +1,248 @@
+/**
+
+字体
+
+*/
+*{
+    font-family:"黑体"
+}
+/**
+
+登录页面
+
+*/
+.userBox{
+    background-image: url('../../static/image/userBac.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.name,.room{
+    height: 4rem;
+    width: 100%;
+    position: relative;
+}
+.name h1,.room h1{
+    color: white;
+    font-size: 1rem;
+    width: 3rem;
+    opacity: 0.7;
+}
+.nameBackColor{
+    width: 100%;
+    height: 4rem;
+    background-color: #ffffff;
+    opacity: 0.45;
+    position: absolute;
+    top: 0;
+}
+.roomBackColor{
+    width: 100%;
+    height: 4rem;
+    background-color: #ffffff;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+
+}
+.roomIcon,.nameIcon{
+    color: white;
+}
+.name .van-cell,.room .van-cell{
+    width: 70%;
+    background-color: transparent;
+}
+.name .van-cell .van-field__control::placeholder,.room .van-cell .van-field__control::placeholder{
+    color: #cacae9;
+}
+.roomIcon{
+    margin-right: 1rem;
+    margin-left: 2rem;
+}
+.nameIcon{
+    margin-right: 1.3rem;
+    margin-left: 2.3rem;
+}
+.userBox .loginBtn{
+    width: 100%;
+}
+.userBox .loginBtn button{
+    width: 12rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 1rem;
+    border: 0;
+    font-size: .8rem;
+}
+.nameRoom{
+    height: 20rem;
+    width: 100%;
+}
+.nameRoom .van-field__control{
+    color: #ffffff;
+}
+
+/**
+
+vip卡页面
+
+*/
+.talkbubble {
+    width: 4rem;
+    height: 1.5rem;
+    background: #cacae9;
+    position: relative;
+    text-align: left;
+    line-height: 1.5rem;
+    top: -.2rem;
+    margin-left: .4rem;
+  }
+  .talkbubble h1{
+    font-size: .8rem;
+  }
+  .talkbubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 1.3rem;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-right: 13px solid #cacae9;
+    /* border-bottom: 2px solid transparent; */
+    left: 7px;
+    transform: rotate(-160deg);
+  }
+  .vipContent>h1{
+    font-size: 1rem;
+    background-color: #cacae9;
+    width: 4.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;  
+    text-align: center;
+  }
+  .vipContent{
+    padding-left: 2rem;
+    position: relative;
+  }
+.discount p,.useTime p,.phone p,.useKnow p{
+    width: 15rem;
+    font-size: .7rem;
+    margin: 0;
+    height: 2rem;
+}
+.discount,.useTime,.phone,.useKnow{
+    background-color: #efefef;
+    margin-top: .4rem;
+    padding-left: .5rem;
+
+}
+.discount{
+    height: 6.5rem;
+    line-height: 1rem;
+}
+.shu{
+    /* position: absolute; */
+    /* left: 1rem; */
+    width: 1.8rem;
+    height: 16px;
+    z-index:1 ;
+    margin-top: .5rem;
+    margin-left: -1rem;
+    /* top: 2.7rem; */
+}
+.useTime,.phone{
+    line-height: 2rem;
+}
+.useKnow{
+    height: 6.5rem;
+}
+.discountBox{
+    top:4rem;
+}
+.useTimeBox,.discountBox,.phoneBox,.useKnowBox{
+    position: absolute;
+    right: 2.6rem;
+}
+.useTimeBox{
+    top: 14em;
+}
+.phoneBox{
+    top: 19rem;
+}
+.useKnowBox{
+    top: 24.5rem;
+    padding-bottom: 60px;
+}
+.vipCard{
+    position: relative;
+}
+.cardId{
+    position: absolute;
+    bottom: 2.3rem;
+    left: 2rem;
+    color: #ffffff;
+    font-size: .5rem
+}
+.van-tabbar--fixed {
+    box-shadow: 0px 0px 4px 0px;
+}
+/**
+
+合作商家页面
+
+*/
+/***
+
+    商家详情
+
+*/
+.headImage{
+    width: 100%;
+}
+.introduce p{
+    font-size: .5rem;
+    margin: 0;
+}
+.introduce{
+    background-color: #efefef;
+    width: 18rem;
+    margin: 0 auto;
+    height: 4rem;
+    line-height: 1.2rem;
+    padding: .5rem;
+    margin-top: 1rem;
+}
+.discountDetail h1{
+    font-size: 1rem;
+    color: #3f2d55;
+}
+.discountDetail{
+    width: 15rem;
+    margin: 2rem auto;
+}
+.discountDetail p{
+    font-size: .8rem;
+}
+
+.logoShow,.logoShow .van-image{
+    position: absolute;
+    top: 56%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.animation{
+    animation: move 1s 
+}
+@keyframes move
+{
+from {transform:  rotateY(0deg)}
+to { transform:  rotateY(180deg)}
+}
+
+@-webkit-keyframes move /*Safari and Chrome*/
+{
+from {transform:  rotateY(0deg)}
+to {transform:  rotateY(180deg)}
+}
