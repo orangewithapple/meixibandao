@@ -17,7 +17,8 @@ router.post('/', function(req, res, next) {
       res.json({
         success: true,
         message: '登录成功',
-        token:token
+        token:token,
+        data:docs
     })
     }
     else
