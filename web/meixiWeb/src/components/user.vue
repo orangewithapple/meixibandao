@@ -44,9 +44,11 @@ export default {
             res=>{
               this.$toast(res.data.message);
               if(res.data.success==true){
+                let id = res.data.data[0].id;
                 let token = JSON.stringify(res.data.token);
                 localStorage.setItem("nameId",res.data.token);
-               this.$router.replace('Index');
+                localStorage.setItem("carId",id);
+                this.$router.replace('Index');
                 }
             }
           )

@@ -3,7 +3,7 @@
         <div class="content">
             <div class="vipCard row-flex-center">
                 <van-image  :src="vipCard"/>
-                <span class="cardId">NO.1546848750</span>
+                <span class="cardId">No.{{carId}}</span>
             </div>
             <div class="vipContent column-flex-start">
                 <h1>会员须知</h1>
@@ -43,7 +43,8 @@ export default {
         whichBox:["discountBox","useTimeBox","phoneBox","useKnowBox"],
         dataList:null,
         discount:["discount","useTime","phone","useKnow"],
-        flex:["column-flex-start","column-flex-center","column-flex-center","column-flex-start"]
+        flex:["column-flex-start","column-flex-center","column-flex-center","column-flex-start"],
+        carId:null
     }},
     methods:{
         getData(){
@@ -54,6 +55,8 @@ export default {
                            data[1].know[3].content = data[1].know[3].content.split(";");
                            this.dataList = data[1].know;
                            this.vipCard = data[0].url;
+                           let id = localStorage.getItem("carId");
+                           this.carId = id;
                         }
                     )
         }

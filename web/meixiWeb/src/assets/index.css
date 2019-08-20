@@ -1,3 +1,4 @@
+
 /**
 
 字体
@@ -199,6 +200,9 @@ vip卡页面
 */
 .headImage{
     width: 100%;
+    position: relative;
+    height: 250px;
+    overflow: hidden;
 }
 .introduce p{
     font-size: .5rem;
@@ -222,15 +226,63 @@ vip卡页面
     margin: 2rem auto;
 }
 .discountDetail p{
-    font-size: .8rem;
+    font-size: .7rem;
+    position: relative;
+    line-height: 1.2rem;
+    width: 16rem
 }
+.headImage .back{
+    position: absolute;
+    font-size: 1.5rem;
+    color: #ffffff;
+    left: .5rem;
+    top: 1rem;
+    z-index: 1;
+}
+.circular{
+    width: .9rem;
+    height: .9rem;
+    border-radius:50% ;
+    background-color: #cacae9;
+    position: absolute;
+    left: -1.5rem;
+    top: .1rem;
+    font-style: normal;
+    font-weight: 600;
+}
+.vipDiscount{
+    position: absolute;
+    color: #ffffff;
+    bottom: .5rem;
+    z-index: 1;
+    left: .8rem;;
+    margin: 0;
+    font-size: .9rem;
+    width: 19rem;
+}
+.icon-xingxing{
+    color: #ffffff;
+    transform:rotate(40deg);
+    display: inline-block;
+    font-size: 1rem;
+    margin-right: .3rem;
+}
+/**
+
+    商家Logo
+
+**/
 
 .logoShow,.logoShow .van-image{
     position: absolute;
-    top: 56%;
+    top: 30%;
     left: 0;
     right: 0;
     margin: auto;
+}
+.logoShow .logo{
+    top:2.5rem;
+    z-index: 1;
 }
 .animation{
     animation: move 1s 
@@ -246,3 +298,10 @@ to { transform:  rotateY(180deg)}
 from {transform:  rotateY(0deg)}
 to {transform:  rotateY(180deg)}
 }
+  .businessBox,.businessBox .van-tabbar{
+    background-color: #e9ecff;
+  }
+  .positionBox{
+    position: relative;
+    height: 21.8rem;
+  }

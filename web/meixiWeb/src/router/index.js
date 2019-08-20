@@ -22,13 +22,12 @@ export default new Router({
     {
       path: '/Business',
       name: 'Business',
-      component: Business,
-      children:[
-        {
-          path: 'BusinessDetail',
-          component: BusinessDetail
-        }
-      ]
+      component: Business
+    },
+    {
+      path: '/BusinessDetail',
+      name: 'BusinessDetail',
+      component: BusinessDetail
     }
   ]
 })
