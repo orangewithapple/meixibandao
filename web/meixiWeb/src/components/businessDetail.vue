@@ -1,5 +1,5 @@
 <template>
-    <div :style="{height:phoneHeight}">
+    <div :style="{height:phoneHeight}" class="detailBox">
         <div class="headImage">
             <i class="iconfont icon-return back" @click="back"></i>
             <p class="vipDiscount"><i class="iconfont icon-xingxing"></i>{{headDiscount}}</p>

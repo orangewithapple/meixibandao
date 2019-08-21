@@ -1,4 +1,6 @@
-
+.detailBox,.content,.businessBox{
+    overflow: scroll
+}
 /**
 
 字体
@@ -17,6 +19,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: hidden;
 }
 .name,.room{
     height: 4rem;
@@ -61,7 +64,7 @@
     margin-left: 2rem;
 }
 .nameIcon{
-    margin-right: 1.3rem;
+    margin-right: .8rem;
     margin-left: 2.3rem;
 }
 .userBox .loginBtn{
@@ -74,6 +77,8 @@
     border-radius: 1rem;
     border: 0;
     font-size: .8rem;
+    background-color: #ffffff;
+    color:#000000;
 }
 .nameRoom{
     height: 20rem;
@@ -300,6 +305,9 @@ to {transform:  rotateY(180deg)}
 }
   .businessBox,.businessBox .van-tabbar{
     background-color: #e9ecff;
+  }
+  .businessBox{
+      overflow: auto;
   }
   .positionBox{
     position: relative;

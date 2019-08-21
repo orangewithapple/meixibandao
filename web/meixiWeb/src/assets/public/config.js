@@ -20,6 +20,7 @@ export default{
             numPage:"numPage",//业主信息分页
             vipDetail:"vipDetail",//会员权益
             business:"business",//合作商家
+            index:"index"//token验证
         }
     },
 }

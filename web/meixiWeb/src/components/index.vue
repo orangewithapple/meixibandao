@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="content">
+        <div class="content" :style="{height:phoneHeight}">
             <div class="vipCard row-flex-center">
                 <van-image  :src="vipCard"/>
                 <span class="cardId">No.{{carId}}</span>
@@ -37,6 +37,7 @@ import Tabar from './public/tabar'
 export default {
     created(){
         this.getData();
+        this.phoneHeight = window.screen.height + 'px';
     },
     data(){return{
         vipCard:null,
@@ -44,7 +45,8 @@ export default {
         dataList:null,
         discount:["discount","useTime","phone","useKnow"],
         flex:["column-flex-start","column-flex-center","column-flex-center","column-flex-start"],
-        carId:null
+        carId:null,
+        phoneHeight:null,
     }},
     methods:{
         getData(){
@@ -55,11 +57,11 @@ export default {
                            data[1].know[3].content = data[1].know[3].content.split(";");
                            this.dataList = data[1].know;
                            this.vipCard = data[0].url;
-                           let id = localStorage.getItem("carId");
-                           this.carId = id;
+                            let id =JSON.parse(localStorage.getItem("userInfo"));
+                           this.carId = id.id;
                         }
                     )
-        }
+        },
     },
   components:{
     Tabar

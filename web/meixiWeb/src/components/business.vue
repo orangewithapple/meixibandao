@@ -5,7 +5,7 @@
         </div>
         <div class="positionBox">
              <div class="logoShow">
-                <van-image :width="logoSize" :height="logoSize" src="./static/image/2.png"/>
+                <van-image :width="logoSize" :height="logoSize" src="./static/image/1.png"/>
             </div>
             <div class="logoShow"  :style="styleBox[index]" v-for="(item,index) in logoWall" :key="item.index" >
                 <van-image :width="logoSize" :height="logoSize" :src="index%2==0?logoBac[1]:logoBac[0]"/>
