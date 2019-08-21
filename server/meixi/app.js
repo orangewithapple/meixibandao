@@ -47,7 +47,7 @@ app.use('*',function(req, res, next) {
     }
 });
 
-app.use('/', indexRouter);
+app.use('/index', indexRouter);
 app.use('/numPage', numPage);
 app.use('/vipDetail', vipDetail);
 app.use('/business', Business);
