@@ -65,8 +65,8 @@ export default {
       currentPage: 1,
       total:0,//业主信息总数量，
       show: false,//弹出框是否弹出,false关闭
-      editname:"",//修改业主姓名
-      editroom:"",//修改房号
+      editname:[],//修改业主姓名
+      editroom:[],//修改房号
       id:"",//数据_id,
       whichFn:""
     };
@@ -94,8 +94,8 @@ export default {
       },
       //修改按钮
       showPopup(data,index){
-        this.editname = data.name.join(',');
-        this.editroom = data.room.join(',');
+        this.editname=data.name;
+        this.editroom=data.room;
         this.id = data._id;
         this.show = true;
         this.whichFn = "修改"
@@ -114,6 +114,16 @@ export default {
       //弹出框保存
       save(){
           let getInfo =localStorage.getItem("userInfo");
+          if(this.editroom instanceof Array==false){
+              let editroom = this.editroom.split(",");
+               this.editroom = editroom;
+              console.log(this.editroom instanceof Array);
+          }
+          if(this.editname instanceof Array==false){
+              let editname = this.editname.split(",");
+              this.editname = editname;
+          console.log(this.editname instanceof Array)
+          }
           this.$http.post(config.langcang_config.url+config.langcang_config.api.numPage,{
                 id:this.id,
                 name:this.editname,
