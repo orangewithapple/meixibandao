@@ -30,7 +30,7 @@ router.post('/', function(req, res, next) {
     
         }
         else{
-            Notice.updateOne({_id:id}, {name:name,room:room}, function(err,doc) {
+            Notice.updateOne({_id:id},{$set:{name:name,room:room}}, function(err,doc) {
                 if (err) {
                     console.log(err);
                 } else {
