@@ -7,8 +7,16 @@ require("../public/javascripts/connectDB");
 router.post('/', function(req, res, next) {
   let name = req.body.name;
   let room = req.body.room;
-  Notice.find({name:name,room:room},function(err,docs){
-    console.log(docs);
+  Notice.find({"name":{$regex:name},"room":room},function(err,docs){
+    console.log(err);
+    console.log(room);
+    if(err){
+      res.json({
+        success: false,
+        message: '验证失败，业主专享',
+    })
+    return;
+    }
     if(docs!=""){
       let secretOrPrivateKey="meixibandao"
       let token= jwt.sign({"room":room},secretOrPrivateKey,{
