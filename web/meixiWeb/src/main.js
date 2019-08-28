@@ -5,12 +5,12 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import { Field,Image,Toast,Row, Col,Tabbar, TabbarItem } from 'vant';
+import { Field,Image,Toast,Row, Col,Tabbar, TabbarItem,Swipe,SwipeItem,Overlay  } from 'vant';
 import 'vant/lib/index.css'
 import "./assets/public/public-flex.css"
 import './assets/index.css'
 Vue.use(VueAxios, axios)
-Vue.use(Field).use(Image).use(Toast).use(Row).use(Col).use(Tabbar).use(TabbarItem)
+Vue.use(Field).use(Image).use(Toast).use(Row).use(Col).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem ).use(Overlay)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

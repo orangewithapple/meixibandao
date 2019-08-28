@@ -10,7 +10,7 @@
         </div>
         <div class="discountDetail">
             <h1>【优惠详情】</h1>
-            <p v-for="(item,index) in discountDetailList" :key="index"><i class="circular row-flex-center">{{index+1}}</i>{{item}}</p>
+            <p v-for="(item,index) in discountDetailList" :key="index"><i class="circular">{{index+1}}</i>{{item}}</p>
         </div>
     </div>
 </template>

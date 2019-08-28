@@ -1,5 +1,8 @@
-.detailBox,.content,.businessBox{
-    overflow: scroll
+.businessBox{
+    overflow: auto
+}
+html,body{
+    height: 100%;
 }
 /**
 
@@ -83,6 +86,7 @@
 .nameRoom{
     height: 20rem;
     width: 100%;
+    overflow-y: hidden;
 }
 .nameRoom .van-field__control{
     color: #ffffff;
@@ -93,6 +97,11 @@
 vip卡页面
 
 */
+.core-container{
+    height: 100%;
+    overflow-y: hidden;
+}
+
 .talkbubble {
     width: 4rem;
     height: 1.5rem;
@@ -126,10 +135,15 @@ vip卡页面
     height: 1.5rem;
     line-height: 1.5rem;  
     text-align: center;
+    margin-top: -.5rem;
+    margin-bottom: 1.5rem;
   }
   .vipContent{
     padding-left: 2rem;
-    position: relative;
+    /* position: relative; */
+  }
+  .vipContent>div{
+      margin-bottom: 1rem;
   }
 .discount p,.useTime p,.phone p,.useKnow p{
     width: 15rem;
@@ -148,37 +162,17 @@ vip卡页面
     line-height: 1rem;
 }
 .shu{
-    /* position: absolute; */
-    /* left: 1rem; */
-    width: 1.8rem;
-    height: 16px;
+    position: absolute;
+    left: 1rem;
+    width: 1.75rem;
     z-index:1 ;
-    margin-top: .5rem;
-    margin-left: -1rem;
-    /* top: 2.7rem; */
+    top: 14.6rem;
 }
 .useTime,.phone{
     line-height: 2rem;
 }
 .useKnow{
     height: 6.5rem;
-}
-.discountBox{
-    top:4rem;
-}
-.useTimeBox,.discountBox,.phoneBox,.useKnowBox{
-    position: absolute;
-    right: 2.6rem;
-}
-.useTimeBox{
-    top: 14em;
-}
-.phoneBox{
-    top: 19rem;
-}
-.useKnowBox{
-    top: 24.5rem;
-    padding-bottom: 60px;
 }
 .vipCard{
     position: relative;
@@ -203,6 +197,9 @@ vip卡页面
     商家详情
 
 */
+.detailBox{
+    overflow: hidden;
+}
 .headImage{
     width: 100%;
     position: relative;
@@ -210,7 +207,7 @@ vip卡页面
     overflow: hidden;
 }
 .introduce p{
-    font-size: .5rem;
+    font-size: .7rem;
     margin: 0;
 }
 .introduce{
@@ -247,6 +244,8 @@ vip卡页面
 .circular{
     width: .9rem;
     height: .9rem;
+    line-height: .9rem;
+    text-align: center;
     border-radius:50% ;
     background-color: #cacae9;
     position: absolute;
@@ -254,6 +253,7 @@ vip卡页面
     top: .1rem;
     font-style: normal;
     font-weight: 600;
+    font-size:.5rem;
 }
 .vipDiscount{
     position: absolute;
@@ -278,38 +278,40 @@ vip卡页面
 
 **/
 
-.logoShow,.logoShow .van-image{
-    position: absolute;
-    top: 30%;
-    left: 0;
-    right: 0;
-    margin: auto;
+.businessBox{
+    background-image: url('../../static/image/businessBac.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
 }
-.logoShow .logo{
-    top:2.5rem;
-    z-index: 1;
+.businessSwiper{
+    width: 18rem;
+    margin: 70% auto;
+    border: 1px solid #ffffff;
 }
-.animation{
-    animation: move 1s 
+.businessSwiper .van-swipe{
+    border: 6px solid #ffffff
 }
-@keyframes move
-{
-from {transform:  rotateY(0deg)}
-to { transform:  rotateY(180deg)}
+.businessLogo{
+    height: 7rem;
 }
+.businessLogo .van-image{
+    margin-left: .2rem;
+    margin-right: .2rem;
+}
+.businessLogo .van-image img{
+    border-radius: 13%;
+}
+.businessBox .wrap{
+    width: 18rem;
+    overflow: hidden;
+}
+/**
 
-@-webkit-keyframes move /*Safari and Chrome*/
-{
-from {transform:  rotateY(0deg)}
-to {transform:  rotateY(180deg)}
+测试
+
+*/
+.mom{
+    height: 51rem;;
 }
-  .businessBox,.businessBox .van-tabbar{
-    background-color: #e9ecff;
-  }
-  .businessBox{
-      overflow: auto;
-  }
-  .positionBox{
-    position: relative;
-    height: 21.8rem;
-  }

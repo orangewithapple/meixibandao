@@ -25,7 +25,7 @@ import config from '../assets/public/config.js'
 export default {
   created(){
     this.phoneHeight = window.screen.height + 'px';
-    // this.autoLogin();
+    this.autoLogin();
   },
   data () {
     return {

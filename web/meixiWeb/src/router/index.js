@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import User from '@/components/user'
 import Index from '@/components/index'
 import BusinessDetail from '@/components/businessDetail'
-import Business from '@/components/Business'
+import Business from '@/components/businessLogo'
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +28,6 @@ export default new Router({
       path: '/BusinessDetail',
       name: 'BusinessDetail',
       component: BusinessDetail
-    }
+    },
   ]
 })
