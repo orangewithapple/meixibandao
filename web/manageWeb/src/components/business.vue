@@ -177,10 +177,20 @@ export default {
         }
         else 
         {
-            this.isAdd = "添加商家";
+            this.isAdd = "保存";
             let discount = this.businessList[0].discount;
             let explain =  this.businessList[0].explain;
-            let detial = this.businessList[0].detial
+            let detial = this.businessList[0].detial;
+            let url = this.businessList[0].businessUrl;
+            let headUrl = this.businessList[0].businessHead
+            if(discount==""||explain==""||detial==""){
+                this.$toast("请完整填写");
+                return;
+            }
+            else if(url.length==0||headUrl.length==0){
+                this.$toast("请上传图片");
+                return;
+            }
             this.$http.post(config.langcang_config.url+config.langcang_config.api.business,{
             addBusiness:"1",
             discount:discount,
