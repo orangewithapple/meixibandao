@@ -36,7 +36,7 @@ export default {
               this.$toast(res.data.message);
               if(res.data.success==true){
                 let token = JSON.stringify(res.data.token);
-                localStorage.setItem("userInfo",res.data.token);
+                localStorage.setItem("manageAdmin",res.data.token);
                 this.$router.replace('Index');
                 }
             }

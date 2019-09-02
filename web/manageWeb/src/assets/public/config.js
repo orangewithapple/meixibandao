@@ -29,7 +29,7 @@ export default{
  * 
  */
    axios.interceptors.request.use(config => {
-  let token = localStorage.getItem("userInfo");
+  let token = localStorage.getItem("manageAdmin");
   if(token)
   {
     config.headers['token'] = token

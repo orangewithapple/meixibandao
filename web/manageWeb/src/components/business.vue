@@ -15,11 +15,11 @@
             </div>
              <div class="row-flex-start">
                 <h1>说明:</h1>
-                 <van-field type="textarea" size="small" v-model="item.explain" :disabled="isdisable" autosize/>
+                 <van-field type="textarea" size="small" placeholder="每句结尾以英文的分号结束" v-model="item.explain" :disabled="isdisable" autosize/>
             </div>
             <div class="businessDiscount row-flex-start">
                 <h1>优惠详情:</h1>
-                <van-field type="textarea" size="small" placeholder="每句结尾必须打上句号" v-model="item.detial" :disabled="isdisable" autosize/>
+                <van-field type="textarea" size="small" placeholder="除了最后一句话，每句结尾必须打上句号" v-model="item.detial" :disabled="isdisable" autosize/>
             </div>
         </div>    
             <div class="businessLogoList">
@@ -31,14 +31,15 @@
                     @click="chooseLogo(item._id)"
                 />
             </div>
-        <div class="row-flex-between" style="height:3rem;width:11rem;margin: 0 auto;">
-            <button @click="edit">{{isedit}}</button>
+        <div class="row-flex-level" style="height:3rem;width:11rem;margin: 0 auto;">
+            <button @click="edit" v-show="editShow">{{isedit}}</button>
             <button @click="add">{{isAdd}}</button>
         </div>
     </div>
 </template>
 <script>
 import config from '../assets/public/config.js'
+import { error } from 'util';
 export default {
     created(){
         this.phoneHeight = window.screen.height + 'px';    
@@ -52,6 +53,7 @@ export default {
             phoneHeight:"",
             businessList:[],
             businessLogoList:[],
+            editShow:true
         }
     },
     methods:{
@@ -79,6 +81,13 @@ export default {
                 this.$toast(res.data.message);
             }
          )
+          .catch(error=>{
+              if(error.response.status==413){
+                  this.$toast("请上传低于5M的图片");
+                  this.businessList[0].businessUrl=[];
+              }
+              console.log(error.response.status)
+          })
     },
     //上传展示头图
     afterHeadRead(file){
@@ -92,16 +101,21 @@ export default {
                 console.log(res.data)
                 this.$toast(res.data.message);
             }
-         )
+         ).catch(error=>{
+              if(error.response.status==413){
+                  this.$toast("请上传低于5M的图片");
+                  this.businessList[0].businessHead=[]
+              }
+          })
     },
     //修改操作
     edit(){
         if(this.isedit=="修改"){
-                this.isedit = "保存"
+                this.isedit = "保存";
                 this.isdisable=false;
             }
             else{
-                this.isedit="修改"
+                this.isedit="修改";
                 this.isdisable=true;
                 let _id = this.businessList[0]._id;
                  this.$http.post(config.langcang_config.url+config.langcang_config.api.business,
@@ -130,6 +144,9 @@ export default {
     },
     //选择商家图标，查看当前商家详情
     chooseLogo(id){
+        this.isedit="修改";
+        this.editShow = true;
+        this.isAdd = "添加商家";
         this.$http.post(config.langcang_config.url+config.langcang_config.api.business,{
             id:id
         }).then(
@@ -144,6 +161,7 @@ export default {
     },
     //添加商户
     add(){
+        this.editShow = false;
         let arr = {
             businessUrl:[],
             businessHead:[],
@@ -159,7 +177,7 @@ export default {
         }
         else 
         {
-            this.isdisable = "添加商家";
+            this.isAdd = "添加商家";
             let discount = this.businessList[0].discount;
             let explain =  this.businessList[0].explain;
             let detial = this.businessList[0].detial
