@@ -1,6 +1,6 @@
 
 <template>
-    <div>
+    <div class="bgbox">
         <div class="loginBox column-flex-center">
           <h1>后台管理系统</h1>
           <div class="row-flex-start">

@@ -1,6 +1,6 @@
 <template>
-    <div class="row-flex-start tableBox" :style="{height:phoneHeight}">
-        <div class="nav" :style="{height:phoneHeight}">
+    <div class="row-flex-start tableBox">
+        <div class="nav">
             <div class="userImg column-flex-center">
                 <van-image round width="2rem" height="2rem" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
                 <span>admin</span>

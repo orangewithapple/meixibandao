@@ -200,6 +200,10 @@ export default {
             res=>{
                 this.$toast(res.data.message);
                 this.getData();
+                this.isedit="修改";
+                this.editShow = true;
+                this.isAdd = "添加商家";
+                this.isdisable = true;
             }
          )
         }
