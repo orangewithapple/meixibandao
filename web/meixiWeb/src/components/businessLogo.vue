@@ -76,7 +76,7 @@ export default {
             }).then(
                 res=>{
                     let dataList = res.data.data[0];
-                    this.$router.push({name:"BusinessDetail",params:dataList})
+                    this.$router.push({path:"/BusinessDetail",query:dataList})
                 })
         }
     },

@@ -147,6 +147,7 @@ export default {
         this.isedit="修改";
         this.editShow = true;
         this.isAdd = "添加商家";
+        this.isdisable=true;
         this.$http.post(config.langcang_config.url+config.langcang_config.api.business,{
             id:id
         }).then(

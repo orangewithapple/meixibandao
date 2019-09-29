@@ -13,7 +13,7 @@ module.exports = {
     proxyTable: {
       '/meixiWeb/api':{
         changeOrigin: true,
-        target:'http://182.61.13.49:3000',
+        target:'http://182.61.36.250:3000',
         pathRewrite: {'^/meixiWeb/api' : ''},
       },
     },

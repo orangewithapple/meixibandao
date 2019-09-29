@@ -34,7 +34,7 @@ export default {
             this.$router.go(-1);
         },
         getData(){
-            let DataList = this.$route.params;
+            let DataList = this.$route.query;
             this.introduceList = DataList.explain.split(";");
             this.discountDetailList =  DataList.detial.split("。");
             this.headImage = DataList.businessHead[0].url;
