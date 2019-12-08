@@ -7,6 +7,28 @@ require("../public/javascripts/connectDB");
 let Notice = require("../models/business");
 /* GET home page. */
 router.post('/', function(req, res, next) {
+    // let na = new Notice({
+    //     businessUrl:[{url:"api/public/images/1565858725319.jpg"}],
+    //     businessHead:
+    //     [
+    //         {
+    //             url:"api/public/images/1565858729493.png",
+    //             discount:"持卡者可在酒店餐饮消费场所可享受食品8.5折优惠（桃花源中餐厅）",
+    //             explain:"桃花源中餐厅位于梅溪湖金茂豪华精选酒店二楼,;提倡以新鲜食材和佐料为菜品核心的田园至餐桌理念,;聚焦菜式创新和本地风味，以地道湘菜和精选粤菜飨宴四方来宾",
+    //             detial:"对于餐饮特别的促销活动（如圣诞大餐、年夜饭、情人节、六一儿童节、中秋节、元旦、全日餐厅各种美食节等），食品销售将按就酒店相关价格执行。以上优惠不能与其他优惠条件同时使用。餐厅海鲜、燕翅鲍、酒水、烟草及特价菜品不享受折扣"
+    //     },
+    //     {
+    //         url:"api/public/images/1565858729493.png",
+    //         discount:"持卡者可享受酒店客房专属会员价，及其他定制福利",
+    //         explain:"长沙梅溪湖金茂豪华精选酒店，地处国家级湘江新区核心地带，临湖而建，毗邻建筑大师扎哈·哈迪德的传世之作——梅溪湖国际文化艺术中心。;酒店以“探寻桃花源”为设计灵感，融合湖湘文化精髓，拥有300余间独具风情的客房和套房，旨为宾客打造至臻完美、圆满难忘的居住体验。;",
+    //         detial:"部分房型，例如[豪华城景客房]、[尊贵城景客房]、[豪华湖景客房]、[尊贵湖景客房]、[尊贵全景客房]、[尊贵湖景套房]，拥有专属会员入住价格。入住价格包含次日免费早餐一份。高类别房型臻享水果、特饮等额外福利待遇。"
+    // },
+    //     ]
+    // });
+    // na.save(function(err,doc){
+    //   console.log(doc);
+    //   console.log(err);
+    // })
     let _id = req.body.id;
     let editId = req.body.editId;
     let time = new Date();
