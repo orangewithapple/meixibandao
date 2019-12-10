@@ -4,6 +4,24 @@
 html,body{
     height: 100%;
 }
+.gemO{
+    position: absolute;
+    top: -5rem;
+    left: 1.375rem;
+    font-size: .75rem;
+}
+.van-tabbar-item{
+    position: relative;
+}
+.gemO li{
+    height: 1.875rem;
+    padding: 5px;
+    border: 1px solid #efefef;
+    background: #ffffff;
+    line-height: 1.875rem;
+    text-align: center;
+    color: #7d7e80;
+}
 /**
 
 字体
